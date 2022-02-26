@@ -1,27 +1,13 @@
 const baseUrl = "http://localhost:3000/api/products";
 
 /**
- * handleError
- * @return { Response }
- */
-var handleError = function (err) {
-  console.warn(err);
-  return new Response(
-    JSON.stringify({
-      code: 400,
-      message: "Network Error",
-    })
-  );
-};
-
-/**
  * Return all the products from api/ as an array
  * @return { Array }
  */
 async function getProducts() {
-  let response = await fetch(`${baseUrl}/`).catch(handleError);
+  let response = await fetch(`${baseUrl}/`);
   if (response.ok) return response.json();
-  else return Promise.reject(response);
+  else console.error(response);
 }
 
 /**
@@ -30,9 +16,9 @@ async function getProducts() {
  * @return { Object }
  */
 async function getProduct(_id) {
-  let response = await fetch(`${baseUrl}/${_id}`).catch(handleError);
+  let response = await fetch(`${baseUrl}/${_id}`);
   if (response.ok) return response.json();
-  else return Promise.reject(response);
+  else console.error(response);
 }
 
 /**
@@ -56,7 +42,7 @@ async function postOrder(_contact, _products) {
   if (response.ok) {
     const jsonResponse = response.json();
     return jsonResponse;
-  } else return Promise.reject(response);
+  } else console.error(response);
 }
 
 export { getProducts, getProduct, postOrder };

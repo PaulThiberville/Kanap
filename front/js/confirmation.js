@@ -52,9 +52,7 @@ function awaitedUrlParamsExist() {
 function getContact() {
   let contact = {};
   awaitedUrlParams.forEach((value) => {
-    if (params[value]) {
-      contact[value] = params[value];
-    }
+    contact[value] = params[value];
   });
   return contact;
 }
@@ -80,9 +78,33 @@ function getProducts() {
  * @returns { Boolean }
  */
 function isOrderValid(_contact, _products) {
-  let isValid = false;
-  if (_products[0]) {
-    isValid = true;
+  let isValid = true;
+  if (!_products[0]) {
+    isValid = false;
+    console.error("Can't find products");
+  }
+  const stringRegex = new RegExp("^([a-zA-Z]){1,64}$");
+  const stringSpacedRegex = new RegExp("^([0-9a-zA-Z ]){1,64}$");
+  const emailRegex = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+  if (!_contact.firstName.match(stringRegex)) {
+    console.error("Contact firstName is not valid");
+    isValid = false;
+  }
+  if (!_contact.lastName.match(stringRegex)) {
+    console.error("Contact lastName is not valid");
+    isValid = false;
+  }
+  if (!_contact.address.match(stringSpacedRegex)) {
+    console.error("Contact address is not valid");
+    isValid = false;
+  }
+  if (!_contact.city.match(stringSpacedRegex)) {
+    console.error("Contact city is not valid");
+    isValid = false;
+  }
+  if (!_contact.email.match(emailRegex)) {
+    console.error("Contact email is not valid");
+    isValid = false;
   }
   return isValid;
 }
