@@ -4,7 +4,6 @@
  */
 function renderItem(_product) {
   if (_product) {
-    console.log("try to render item : ", _product);
     renderItemImage(_product.imageUrl, _product.altTxt);
     renderItemTxts(_product.name, _product.price, _product.description);
     renderColorSelect(_product.colors);
@@ -27,7 +26,7 @@ function renderItemImage(_imageUrl, _altTxt) {
  * Update item name, price and description text elements
  * @param { String } _name
  * @param { String } _price
- * @param { String } _price
+ * @param { String } _description
  */
 function renderItemTxts(_name, _price, _description) {
   const title = document.getElementById("title");

@@ -1,6 +1,5 @@
 import { renderCart, renderTotal } from "./renders/cartRender.js";
-import { getCart, getTotal, deleteCart } from "./services/cartService.js";
-import { postOrder } from "./services/productsService.js";
+import { getCart, getTotal } from "./services/cartService.js";
 
 init();
 

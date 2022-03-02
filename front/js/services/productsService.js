@@ -37,11 +37,9 @@ async function postOrder(_contact, _products) {
       "Content-Type": "application/json",
     },
   };
-  console.log("Order request : ", request);
   let response = await fetch(`${baseUrl}/order`, request);
   if (response.ok) {
-    const jsonResponse = response.json();
-    return jsonResponse;
+    return response.json();
   } else console.error(response);
 }
 

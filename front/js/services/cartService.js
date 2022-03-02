@@ -19,7 +19,7 @@ function deleteCart() {
  */
 function getCart() {
   let cart = JSON.parse(localStorage.getItem("cart"));
-  if (cart == null) {
+  if (cart === null) {
     cart = [];
     localStorage.setItem("cart", JSON.stringify(cart));
   }
@@ -32,42 +32,22 @@ function getCart() {
  * @param { String } _quantity
  */
 function addItemInCart(_product, _color, _quantity) {
-  console.log("Trying to add item : ", _product, _color, _quantity);
   let cart = getCart();
   let exist = false;
   cart.forEach((product) => {
-    if (product.product._id == _product._id && product.color == _color) {
+    if (product.product._id === _product._id && product.color === _color) {
       product.quantity = parseInt(product.quantity) + parseInt(_quantity);
-
-      console.log(
-        "Updating cart item : ",
-        _product._id,
-        " Quantity :",
-        _quantity,
-        " Color :",
-        _color
-      );
       exist = true;
     }
   });
-  if (exist == false) {
+  if (exist === false) {
     let newProduct = {};
     newProduct.product = _product;
     newProduct.color = _color;
     newProduct.quantity = _quantity;
     cart.push(newProduct);
-
-    console.log(
-      "Adding new cart item : ",
-      _product._id,
-      " Quantity :",
-      _quantity,
-      " Color :",
-      _color
-    );
   }
   setCart(cart);
-  console.log("Cart : ", getCart());
 }
 /**
  * Remove item from the cart in localStorage
@@ -76,14 +56,11 @@ function addItemInCart(_product, _color, _quantity) {
  */
 function removeItemInCart(_id, _color) {
   let cart = getCart();
-  console.log("try to remove :", _id, _color);
-  console.log("From : ", cart);
   cart.forEach((product, index) => {
-    if (product.product._id == _id && product.color == _color) {
+    if (product.product._id === _id && product.color === _color) {
       cart.splice(index, 1);
     }
   });
-  console.log("Cart after removing item  : ", cart);
   setCart(cart);
 }
 
@@ -95,7 +72,7 @@ function removeItemInCart(_id, _color) {
 function setItemQuantityInCart(_id, _color, _quantity) {
   let cart = getCart();
   cart.forEach((product) => {
-    if (product.product._id == _id && product.color == _color) {
+    if (product.product._id === _id && product.color === _color) {
       product.quantity = parseInt(_quantity);
     }
   });
@@ -110,7 +87,6 @@ function setItemQuantityInCart(_id, _color, _quantity) {
 function getTotal(_cart) {
   let price = 0;
   let quantity = 0;
-  console.log("Try to calculate total from cart : ", _cart);
   if (_cart) {
     _cart.forEach((item) => {
       for (let i = 0; i < item.quantity; i++) {
@@ -119,8 +95,6 @@ function getTotal(_cart) {
       }
     });
   }
-  console.log("Total :");
-  console.log("Price : ", price, "Quantity : ", quantity);
   return { price, quantity };
 }
 

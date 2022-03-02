@@ -15,7 +15,6 @@ function renderCart(_parent, _cart) {
     _parent.innerHTML = "";
   }
   _cart.forEach((product) => {
-    console.log("Trying to render : ", product);
     const item = renderCartItem(
       product.product,
       product.color,
