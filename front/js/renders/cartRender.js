@@ -32,14 +32,14 @@ function renderCart(_parent, _cart) {
  * @return { Element }
  */
 function renderCartItem(_product, _color, _quantity) {
-  const finalCartItem = document.createElement("article");
-  finalCartItem.classList = "cart__item";
-  finalCartItem.setAttribute("data-id", _product._id);
+  const cartItem = document.createElement("article");
+  cartItem.classList = "cart__item";
+  cartItem.setAttribute("data-id", _product._id);
   finalCartItem.setAttribute("data-color", _color);
 
   const imageContainer = document.createElement("div");
   imageContainer.classList = "cart__item__img";
-  finalCartItem.appendChild(imageContainer);
+  cartItem.appendChild(imageContainer);
 
   const image = document.createElement("img");
   image.src = _product.imageUrl;
@@ -48,7 +48,7 @@ function renderCartItem(_product, _color, _quantity) {
 
   const contentContainer = document.createElement("div");
   contentContainer.classList = "cart__item__content";
-  finalCartItem.appendChild(contentContainer);
+  cartItem.appendChild(contentContainer);
 
   const descriptionContainer = document.createElement("div");
   descriptionContainer.classList = "cart__item__content__description";
@@ -110,7 +110,7 @@ function renderCartItem(_product, _color, _quantity) {
   });
   deleteItemContainer.appendChild(deleteItem);
 
-  return finalCartItem;
+  return cartItem;
 }
 
 /**
