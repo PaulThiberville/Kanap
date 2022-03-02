@@ -33,9 +33,9 @@ function renderItemPreview(_id, _imageUrl, _altTxt, _name, _description) {
   let name = document.createElement("h3");
   let description = document.createElement("p");
 
-  link.setAttribute("href", `./product.html?id=${_id}`);
-  image.setAttribute("src", _imageUrl);
-  image.setAttribute("alt", _altTxt);
+  link.href = `./product.html?id=${_id}`;
+  image.src = _imageUrl;
+  image.alt = _altTxt;
 
   name.classList.add("productName");
   description.classList.add("productDescription");

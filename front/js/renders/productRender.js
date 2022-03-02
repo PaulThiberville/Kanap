@@ -17,8 +17,8 @@ function renderItem(_product) {
  */
 function renderItemImage(_imageUrl, _altTxt) {
   const image = document.createElement("img");
-  image.setAttribute("src", _imageUrl);
-  image.setAttribute("alt", _altTxt);
+  image.src = _imageUrl;
+  image.alt = _altTxt;
   document.querySelector(".item__img").appendChild(image);
 }
 

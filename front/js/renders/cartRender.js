@@ -35,7 +35,7 @@ function renderCartItem(_product, _color, _quantity) {
   const cartItem = document.createElement("article");
   cartItem.classList = "cart__item";
   cartItem.setAttribute("data-id", _product._id);
-  finalCartItem.setAttribute("data-color", _color);
+  cartItem.setAttribute("data-color", _color);
 
   const imageContainer = document.createElement("div");
   imageContainer.classList = "cart__item__img";
