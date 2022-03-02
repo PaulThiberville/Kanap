@@ -77,19 +77,25 @@ function isOrderValid(_contact, _products) {
   if (!_products[0]) {
     isValid = false;
   }
-  const stringRegex = new RegExp("^([a-zA-Z]){1,64}$");
-  const stringSpacedRegex = new RegExp("^([0-9a-zA-Z ]){1,64}$");
-  const emailRegex = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+  const stringRegex = new RegExp(
+    "^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$"
+  );
+  const stringAndNumbersRegex = new RegExp(
+    "^[0-9a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð ,.'-]+$"
+  );
+  const emailRegex = new RegExp(
+    "^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$"
+  );
   if (!_contact.firstName.match(stringRegex)) {
     isValid = false;
   }
   if (!_contact.lastName.match(stringRegex)) {
     isValid = false;
   }
-  if (!_contact.address.match(stringSpacedRegex)) {
+  if (!_contact.address.match(stringAndNumbersRegex)) {
     isValid = false;
   }
-  if (!_contact.city.match(stringSpacedRegex)) {
+  if (!_contact.city.match(stringAndNumbersRegex)) {
     isValid = false;
   }
   if (!_contact.email.match(emailRegex)) {
