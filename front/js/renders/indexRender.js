@@ -32,22 +32,17 @@ function renderItemPreview(_id, _imageUrl, _altTxt, _name, _description) {
   let image = document.createElement("img");
   let name = document.createElement("h3");
   let description = document.createElement("p");
-
   link.href = `./product.html?id=${_id}`;
   image.src = _imageUrl;
   image.alt = _altTxt;
-
   name.classList.add("productName");
   description.classList.add("productDescription");
-
   name.textContent = _name;
   description.textContent = _description;
-
   link.appendChild(product);
   product.appendChild(image);
   product.appendChild(name);
   product.appendChild(description);
-
   return link;
 }
 

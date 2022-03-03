@@ -10,6 +10,7 @@ const params = getParams(); // url params
 (async () => {
   await init();
 })();
+
 /**
  * Call functions to try to order if contact from UrlsParams and products from cart are valid then display orderId
  */
@@ -21,8 +22,15 @@ async function init() {
       const response = await postOrder(contact, products);
       orderIdElement.textContent = response.orderId;
       deleteCart();
+      return;
     }
   }
+
+  //If contact doesn't exist, is not valid or cart is empty, redirecting user to index page
+  window.alert(
+    "Une erreure s'est produite. Vous allez être redirigé vers la page d'accueil"
+  );
+  window.location.href = "/front/html/index.html";
 }
 
 /**
@@ -66,6 +74,7 @@ function getProducts() {
   });
   return products;
 }
+
 /**
  * Return true if order is valid
  * @param { Object } _contact

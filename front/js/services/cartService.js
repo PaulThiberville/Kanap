@@ -25,6 +25,7 @@ function getCart() {
   }
   return cart;
 }
+
 /**
  * Add item to the cart in localStorage
  * @param { Object } _product
@@ -49,6 +50,7 @@ function addItemInCart(_product, _color, _quantity) {
   }
   setCart(cart);
 }
+
 /**
  * Remove item from the cart in localStorage
  * @param { String } _id

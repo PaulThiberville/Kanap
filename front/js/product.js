@@ -17,6 +17,7 @@ let product = {};
     }); // Add event listener
   }
 })();
+
 /**
  * Triggered by addToCart button on click event
  * * Add product to cart with selected color and amount
