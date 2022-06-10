@@ -8,16 +8,26 @@ Main features:
  -Product page display a product and enable to add to cart with quantity and color selection
  -Cart page display all products in the cart, total price and purchase fom
  -Confirmation page display purchase Id 
+ 
+ 
+# Clone
 
+go to desired location in your terminal and run the following command :
+ 
+ git clone https://github.com/PaulThiberville/OCDWP5_Kanap
+ 
 
-### Back end Prerequisites ###
+# Back end Installation
 
-You will need to have Node and `npm` installed locally on your machine.
+From the "back" folder of the project run the following command :
 
-### Back end Installation ###
+ npm install 
+ 
 
-Clone this repo. From the "back" folder of the project, run `npm install`. You 
-can then run the server with `node server`. 
-The server should run on `localhost` with default port `3000`. If the
-server runs on another port for any reason, this is printed to the
-console when the server starts, e.g. `Listening on port 3001`.
+# Using
+
+From the "back" folder of the project run the following command :
+
+ node server
+ 
+then open index.html in your browser
