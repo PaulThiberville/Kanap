@@ -1,6 +1,14 @@
-# Kanap #
+# What is it ?
 
-This is the front end and back end server for Project 5 of the Web Developer path.
+This is the front end and back end for Project 5 of the Web Developer path.
+
+Main features:
+
+ -Home page display all products
+ -Product page display a product and enable to add to cart with quantity and color selection
+ -Cart page display all products in the cart, total price and purchase fom
+ -Confirmation page display purchase Id 
+
 
 ### Back end Prerequisites ###
 
