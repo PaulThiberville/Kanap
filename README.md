@@ -6,10 +6,10 @@ https://openclassrooms.com/fr/paths/185/projects/675/assignment
 
 Main features:
 
-     -Home page display all products
-     -Product page display a product and enable to add to cart with quantity and color selection
-     -Cart page display all products in the cart, total price and purchase fom
-     -Confirmation page display purchase Id 
+- Home page display all products
+- Product page display a product and enable to add to cart with quantity and color selection
+- Cart page display all products in the cart, total price and purchase fom
+- Confirmation page display purchase Id 
  
  
 # Clone
