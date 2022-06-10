@@ -14,20 +14,20 @@ Main features:
 
 go to desired location in your terminal and run the following command :
  
- git clone https://github.com/PaulThiberville/OCDWP5_Kanap
+     git clone https://github.com/PaulThiberville/OCDWP5_Kanap
  
 
 # Back end Installation
 
 From the "back" folder of the project run the following command :
 
- npm install 
+     npm install 
  
 
 # Using
 
 From the "back" folder of the project run the following command :
 
- node server
+     node server
  
 then open index.html in your browser
