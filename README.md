@@ -26,7 +26,7 @@ From the "back" folder of the project run the following command :
      npm install 
  
 
-# Using
+# Start
 
 From the "back" folder of the project run the following command :
 
