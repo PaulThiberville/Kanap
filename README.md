@@ -2,6 +2,8 @@
 
 This is the front end and back end for Project 5 of the Web Developer path.
 
+https://openclassrooms.com/fr/paths/185/projects/675/assignment
+
 Main features:
 
      -Home page display all products
